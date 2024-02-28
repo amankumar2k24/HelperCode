@@ -1,0 +1,62 @@
+ARIA ==>
+
+<nav role="navigation" aria-label="Main">
+
+<form role="form" aria-labelledby="formTitle">
+  <h2 id="formTitle">Contact Form</h2>
+  <label for="name">Name:</label>
+  <input type="text" id="name" aria-required="true" />
+  <label for="email">Email:</label>
+  <input type="email" id="email" aria-describedby="emailHelp" />
+  <small id="emailHelp">We'll never share your email with anyone else.</small>
+  <button type="submit">Submit</button>
+</form>
+
+<button role="button" aria-pressed="false" aria-label="Toggle" onclick="toggleMenu()">Menu</button>
+
+<header role="banner">
+  <h1>My Website</h1>
+</header>
+<nav role="navigation">
+  <!-- Navigation links -->
+</nav>
+<main role="main">
+  <!-- Main content -->
+</main>
+<footer role="contentinfo">
+  <!-- Footer content -->
+</footer>
+
+<div role="alert" aria-live="polite">
+  Your message has been sent successfully.
+</div>
+
+
+
+
+Role ==> Here are some common roles and examples of where you can use them:
+
+Navigation: <div role="navigation">, <nav role="navigation">
+
+Used to define sections of a page that contain navigation links.
+Banner: <header role="banner">
+
+Used to define the introductory content or a group of navigational links.
+Main Content: <main role="main">
+
+Used to define the main content area of a webpage.
+Sidebar: <aside role="complementary">
+
+Used to define a section of the page that is complementary to the main content, such as a sidebar.
+Search: <form role="search">
+
+Used to define a search form or search functionality on a webpage.
+Footer: <footer role="contentinfo">
+
+Used to define the footer section of a webpage, typically containing information about the website.
+Button: <button role="button">
+
+Used to define elements that act as buttons.
+Link: <a role="link">
+
+Used to define elements that act as hyperlinks.

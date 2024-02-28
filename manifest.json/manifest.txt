@@ -1,0 +1,88 @@
+// For manifest.json  file ==>
+
+// YT video link - https://www.youtube.com/watch?v=RvEEZLxiAlQ&list=WL&index=40&t=169s
+
+// Steps=>
+// 1. Add these 
+
+// manifest.json  file name and data is =>
+{
+    "name": "Atmanirbhar Bharat Escrow",
+    "short_name": "Atmanirbhar",
+    "description": "Empowering Indian Freelancers and Buyers Through Secure Transactions",
+    "icons": [
+      {
+        "src": "maskable.png",
+        "sizes": "196x196",
+        "type": "image/png"
+      },
+      {
+        "src": "logo192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "logo256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      },
+      {
+        "src": "logo384.png",
+        "sizes": "384x384",
+        "type": "image/png"
+      },
+      {
+        "src": "logo512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "http://localhost:5173/auth/sign-in",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "orientation": "any",
+    "scope": "/",
+    "lang": "en",
+    "prefer_related_applications": false,
+    "serviceworker": {
+      "src": "/path/to/service-worker.js",    
+      "scope": "/" 
+    }
+  }
+
+  
+// Need to visit the sites=>
+// 1. image resizer => to resize the image  => https://imageresizer.com/         => by this we need to change the 4 icons of our logo
+// 2. png or jpg to favicon => https://favicon.io/favicon-converter/               => from here we need to we need to change the icon of our image from jpg to favicon and add it into the index.html
+
+//   <link rel=" shortcut icon" href="/favicon.ico" />
+//   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+//   <link rel="manifest" href="/manifest.json">
+//   <!-- to run manifest => npm run build ,  serve -s build   command is compulsory  -->
+//   <meta name="theme-color" content="#000000">
+
+
+// Note => to check the manifest , we can go to the Application => Manifest      or  Lighthouse => select all the things or  Progressive Web App and   and click on Analyze page load
+
+
+
+3. maskable.app/editor       => change your logo icon here that will be look in mobile  after that add it in manifest.json
+
+
+
+SERVICE WORKER => serviceworker: This field specifies the location of the service worker JavaScript file and its scope. The service worker is responsible for caching resources and providing offline functionality for your PWA.
+
+
+4. Now for sevice-workers
+   1. Create a new react app by using command ==>   npx create-react-app my-app --template cra-template-pwa 
+    2. after this   copy  service-worker.js  and  serviceWorkerRegisteraion.js file   and paste in into our project in src folder
+   3. copy import * as serviceWorkerRegisteraion from "./serviceWorkerRegisteraion"      from new  my-app and paste in our app 
+   3. and in index.js  file        in last       serviceWorkerRegisteraion.unRegister()  will be there .. copy and paste it in our app  but change the name from serviceWorkerRegisteraion.unregister()   to    serviceWorkerRegisteraion.register()                                    
+
+this will register our service worker 
+
+
+if our code is not running in production server  it will not run (service worker)            
+
+To run this or production for temporary purpose .,  write =>  npm run build , serve -s build       command and check the code in lighthouse and generate the report for mobile  (pwa) ...Here we go....
